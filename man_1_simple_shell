@@ -1,0 +1,83 @@
+.TH man 1 "01 April 2020" "1.0" "Simple Shell man page"
+.SH NAME
+shell - a simple command line interpreter
+.SH SYNOPSIS
+#include "shell.h"
+.SH DESCRIPTION
+A custom simple shell. Does the three things like the Thompson shell,
+.I initialize, interpret, terminate.
+The shell takes a command from de standard input and read it,
+then parses the command and finally executes the given command.
+.SS Suported Commands
+.sp
+ls
+.I [[flags]...[arguments]]
+	lists files in the current directory using flags entered by the user
+.sp
+pwd
+	  prints working directory
+.sp
+cat
+.I [[flag] [file ...]]
+	read and writes files to standard output and displays certains formats
+depending on flag entered by user
+.sp
+echo
+.I [arguments]
+	writes argument(s) that the user enters to standard ouput then prints
+a newline
+.SS Suported Builtins
+.sp
+env
+	prints enviroment variables
+.sp
+exit
+	exits out of the custom shell and returns to the user's shell
+.SH RETURN
+returns 0 on success, other number is returned on failure otherwise
+.SH EXAMPLE
+.sp
+.I Interactive mode
+.sp
+$ ./hsh
+.bp
+($) /bin/ls
+.bp
+hsh main.c shell.c
+.bp
+($)
+.bp
+($) exit
+.bp
+$
+.sp
+.I Non-interactive mode
+.sp
+$ echo "/bin/ls" | ./hsh
+.bp
+hsh main.c shell.c test_ls_2
+.bp
+$
+.bp
+$ cat test_ls_2
+.bp
+/bin/ls
+.bp
+/bin/ls
+.bp
+$
+.bp
+$ cat test_ls_2 | ./hsh
+.bp
+hsh main.c shell.c test_ls_2
+.bp
+hsh main.c shell.c test_ls_2
+.bp
+$
+.SH SEE ALSO
+.I sh(1), bash(1)
+.SH BUGS
+if there is any bug contact the authors
+.SH AUTHORS
+Daniel chica Echeverri (1487@holbertonschool.com)
+Eddy Santiago Zapata Higuita (1602@holbertonschool.com)
