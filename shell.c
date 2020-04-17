@@ -5,8 +5,9 @@
  * @ac: number of command arguments
  * @av: array of arguments
  * @env: eviroment path
+ * Return: exit, status
  */
-int main(int ac, char **av, char **env) 
+int main(int ac, char **av, char **env)
 {
 	size_t buf = 0;
 	unsigned int i, interac = 0;

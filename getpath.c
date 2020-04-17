@@ -2,7 +2,7 @@
 /**
  * execmd - executea a command
  * @cmd: command
- * @inp: pointer to struct
+ * @input: pointer to struct
  * Return: 0 on success 1 otherwise
  */
 int execmd(char *cmd, inp_t *input)
@@ -61,7 +61,8 @@ char *pathfinder(char **env)
 	return (env[i]);
 }
 
-/** dirchecker - looks if the command is part of a path
+/**
+ * dirchecker - looks if the command is part of a path
  * @cmd: given command
  * Return: 1 on success, 0 otherwise
  */
@@ -84,7 +85,7 @@ void pathchecker(inp_t *input)
 	char *dir, *dupl = NULL, *ver = NULL;
 	char **tokens;
 	unsigned int i = 0, j = 0;
-	
+
 	if (dirchecker(input->tokens[0]))
 		j = current_exec(input);
 	else
